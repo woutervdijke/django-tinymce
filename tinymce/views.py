@@ -7,6 +7,7 @@ import logging
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
+from django.conf import settings
 from django.utils.translation import gettext as _
 from django.views.decorators.csrf import csrf_exempt
 
@@ -103,7 +104,7 @@ def filebrowser(request):
     except Exception:
         fb_url = request.build_absolute_uri(reverse("filebrowser:fb_browse"))
         
-    if not DEBUG: fb_url = fb_url.replace('http', 'https')
+    if not settings.DEBUG: fb_url = fb_url.replace('http', 'https')
 
     return render(
         request,
