@@ -1,5 +1,5 @@
 function djangoFileBrowser(callback, value, meta) {
-    var url = "{{ fb_url }}?pop=5&type=" + meta.filetype;
+    var url = "{{ fb_url }}?pop=2&type=" + meta.filetype;
 
     tinyMCE.activeEditor.windowManager.openUrl(
         {
