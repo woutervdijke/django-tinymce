@@ -102,6 +102,8 @@ def filebrowser(request):
         fb_url = request.build_absolute_uri(reverse("fb_browse"))
     except Exception:
         fb_url = request.build_absolute_uri(reverse("filebrowser:fb_browse"))
+        
+    if not DEBUG: fb_url = fb_url.replace('http', 'https')
 
     return render(
         request,
